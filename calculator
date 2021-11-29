@@ -1,0 +1,208 @@
+sum = 0
+
+
+def Addition(number_a):
+
+    global sum
+
+    if number_a < 1000000 or number_a > -1000000:
+        sum += number_a
+        print(sum)
+
+    else:
+        print("Enter a valid number...")
+
+
+
+def Subtraction(number_s):
+
+    global sum
+
+    if number_s < 1000000 or number_s > -1000000:
+        sum -= number_s
+        print(sum)
+
+    else:
+        print("Enter a valid number...")
+
+
+
+def Multiply(number_m):
+
+    global sum
+
+    if number_m < 1000000 or number_m > -1000000:
+
+        if sum == 0:
+            sum = number_m
+            print(number_m)
+
+        else:
+            sum = sum * number_m
+            print(sum)
+
+    else:
+        print("Enter a valid number...")
+
+
+
+def Division(number_d):
+
+    global sum
+
+    if number_d < 1000000 or number_d > -1000000:
+
+        if sum == 0:
+            sum = number_d
+            print(number_d)
+
+        else:
+            sum = sum / number_d
+            print(sum)
+
+    else:
+        print("Enter a valid number...")
+
+
+
+def Exponential(number_1,number_e):
+
+    global sum
+
+    if number_1 < 1000000 or number_1 > -1000000:
+        sum = number_1 ** number_e
+        print(sum)
+
+    else:
+        print("Enter a valid number...")
+
+
+def Factoriel(number_f):
+
+    global sum
+
+    if number_f < 1000000 or number_f > -1000000:
+
+        if number_f == 0:
+            sum = 1
+            print(sum)
+
+        else:
+            sum = 1
+            for i in range(1,number_f+1):
+                sum = sum * i
+            print(sum)
+
+    else:
+        print("Enter a valid number...")
+
+
+print("""
+ ____________________
+|_____CALCULATOR_____|
+|                    |
+|                    |
+|   Addition(+)      |
+|   Subtration(-)    |
+|   Multiply(*)      |
+|   Division(/)      |
+|   Exponential(^)   |
+|   Factoriel(!)     |
+|                    |
+|   Clear(C)         |
+|   Quit(q)          |
+|                    |
+|____________________|
+""")
+
+while True:
+
+    #number = int(input("Number:"))     It could be unneccessery or think otherwise
+    #sum = number
+    progress = input("Progress:")
+
+    if progress == "q":
+        break
+
+
+    elif progress == "C":
+        sum = 0
+        print(sum)
+
+
+    elif progress == "+":
+
+        try:
+            number = float(input("Number:"))
+
+        except ValueError:
+            print("Enter a number...")
+
+        else:
+            Addition(number)
+
+
+
+    elif progress == "-":
+
+        try:
+            number = float(input("Number:"))
+
+        except ValueError:
+            print("Enter a number...")
+
+        else:
+            Subtraction(number)
+
+
+
+    elif progress == "*":
+
+        try:
+            number = float(input("Number:"))
+
+        except ValueError:
+            print("Enter a number...")
+
+        else:
+            Multiply(number)
+
+
+    elif progress == "/":
+
+        try:
+            number = float(input("Number:"))
+
+        except ValueError:
+            print("Enter a number...")
+
+        else:
+            Division(number)
+
+
+    elif progress == "^":
+
+        try:
+            number_1 = float(input("Number:"))
+            number_2 = float(input("Exponential number:"))
+
+        except ValueError:
+            print("Enter a number...")
+
+        else:
+            Exponential(number_1,number_2)
+
+
+    elif progress == "!":
+
+        try:
+            number = int(input("Number:"))
+
+        except ValueError:
+            print("Enter a number...")
+
+        else:
+            Factoriel(number)
+
+    else:
+        print("Enter a valid progress...")
