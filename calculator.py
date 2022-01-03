@@ -1,75 +1,79 @@
 sum = 0
 
-def Addition(number_a):
-
-    global sum
-
-    sum += number_a
-    return sum
+class calculator():
 
 
-def Subtraction(number_s):
+    def Addition(self,number_a):
 
-    global sum
+        global sum
 
-    sum -= number_s
-    return sum
-
-
-def Multiply(number_m):
-
-    global sum
-
-    if sum == 0:
-        sum = number_m
-        return sum
-
-    else:
-        sum = sum * number_m
+        sum += number_a
         return sum
 
 
+    def Subtraction(self,number_s):
 
-def Division(number_d):
+        global sum
 
-    global sum
-
-    if sum == 0:
-        sum = number_d
-        return sum
-
-    else:
-        sum = sum / number_d
+        sum -= number_s
         return sum
 
 
+    def Multiply(self,number_m):
 
-def Exponential(number_1,number_e):
+        global sum
 
-    global sum
+        if sum == 0:
+            sum = number_m
+            return sum
 
-    sum = number_1 ** number_e
-    return sum
+        else:
+            sum = sum * number_m
+            return sum
 
 
 
-def Factoriel(number_f):
+    def Division(self,number_d):
 
-    global sum
+        global sum
 
-    if number_f == 0:
-        sum = 1
-        return sum
+        if sum == 0:
+            sum = number_d
+            return sum
 
-    else:
-        sum = 1
-        for i in range(1,number_f+1):
-            sum = sum * i
+        else:
+            sum = sum / number_d
+            return sum
+
+
+
+    def Exponential(self,number_1,number_e):
+
+        global sum
+
+        sum = number_1 ** number_e
         return sum
 
 
 
-#Screen that shows progress
+    def Factoriel(self,number_f):
+
+        global sum
+
+        if number_f == 0:
+            sum = 1
+            return sum
+
+        else:
+            sum = 1
+            for i in range(1,number_f+1):
+                sum = sum * i
+            return sum
+
+
+calculator = calculator()
+
+#Screen that shows process
 print("""
  ____________________
 |_____CALCULATOR_____|
@@ -113,7 +117,7 @@ while True:
             print("Enter a number...")
 
         else:
-            print(Addition(number))
+            print(calculator.Addition(number))
 
 
 
@@ -126,7 +130,7 @@ while True:
             print("Enter a number...")
 
         else:
-            print(Subtraction(number))
+            print(calculator.Subtraction(number))
 
 
 
@@ -139,7 +143,7 @@ while True:
             print("Enter a number...")
 
         else:
-            print(Multiply(number))
+            print(calculator.Multiply(number))
 
 
     elif progress == "/":
@@ -151,7 +155,7 @@ while True:
             print("Enter a number...")
 
         else:
-            print(Division(number))
+            print(calculator.Division(number))
 
 
     elif progress == "^":
@@ -163,10 +167,10 @@ while True:
             print("Enter a number...")
 
         else:
-            print(Exponential(sum,number_e))
+            print(calculator.Exponential(sum,number_e))
 
 
     elif progress == "!":
 
         number = int(sum)       #to get factoriel number must be integer
-        print(Factoriel(number))
+        print(calculator.Factoriel(number))
